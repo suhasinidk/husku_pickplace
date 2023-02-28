@@ -1,0 +1,5 @@
+rosdep install --from-paths . --ignore-src  -y
+catkin build
+source ./devel/setup.bash
+source ./src/husky_pickplace/scripts/husky_ur5_envar.sh
+roslaunch husky_pickplace husky_amcl.launch
