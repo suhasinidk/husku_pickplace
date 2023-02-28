@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_skill/lib/python2.7/dist-packages/skiros2_skill/__init__.py

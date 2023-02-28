@@ -1,0 +1,4 @@
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/pkgconfig/demo_skills.pc
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/python2.7/dist-packages/demo_skills/__init__.py
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/demo_skills/cmake/demo_skillsConfig-version.cmake
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/demo_skills/cmake/demo_skillsConfig.cmake

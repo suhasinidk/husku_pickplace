@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--  The components of this file were lifted from the 3 launches to run the ur5 code in rviz and gazebo:
+  * roslaunch ur_gazebo ur5.launch
+  * roslaunch ur5_moveit_config moveit_rviz.launch config:=true
+-->
+<launch>
+  <!-- FROM ur5.launch -->
+<!--   <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="false" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+ -->  
+  <!-- startup simulated world -->
+<!--   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+ -->
+  <!-- send robot urdf to param server -->
+<!--   <include file="$(find ur_description)/launch/ur5_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include> -->
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+<!--   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" /> -->
+
+  <!-- <include file="$(find ur_gazebo)/launch/controller_utils.launch"/> -->
+
+  <!-- Fake Calibration, All that is not already loaded outside of controller_utils.launch -->
+  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+        args="pub /calibrated std_msgs/Bool true" />
+
+  <!-- start this controller -->
+  <!-- <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur5.yaml" command="load"/> -->
+  <!-- <rosparam file="$(find huskyur5_moveit_config)/config/arm_controller_huskyur5.yaml" command="load"/> -->
+  <rosparam file="$(find huskyur5gripper_moveit_config)/config/arm_controller_huskyur5.yaml" command="load"/>
+
+
+  <!-- <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/> -->
+  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_position_controller gripper_controller" respawn="false" output="screen"/>
+
+
+  <!-- load other controllers -->
+<!-- <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" /> -->
+  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load arm_position_controller gripper_controller" />
+
+  <rosparam file="$(find huskyur5gripper_moveit_config)/config/joint_state_controller.yaml" command="load"/>
+  
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+  <!-- FROM moveit_rviz.launch -->
+
+  <!-- <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb  -->
+    <!--ex run -->
+    <!--args" />-->
+
+<!--   <arg name="config" default="false" />
+  <arg unless="$(arg config)" name="command_args" value="" />
+  <arg     if="$(arg config)" name="command_args" value="-d $(find husky_pp_ur5_config)/launch/moveit.rviz" />
+  
+  <node name="$(anon rviz)" launch-prefix="$(arg launch_prefix)" pkg="rviz" type="rviz" respawn="false"
+  args="$(arg command_args)" output="screen">
+    <rosparam command="load" file="$(find husky_pp_ur5_config)/config/kinematics.yaml"/>
+  </node> -->
+
+</launch>

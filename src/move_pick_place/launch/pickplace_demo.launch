@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Gazebo Args -->
+  <arg name="use_sim_time"  default="true"/>
+  <arg name="debug"         default="false"/>
+  <arg name="gui"           default="true"/>
+
+  <!-- Initial Pose Settings -->
+  <arg name="initialposeX"    default="0.0"/>
+  <arg name="initialposeY"    default="0.0"/>
+  <arg name="initialposeZ"    default="0.0"/>
+  <arg name="initialposeYaw"  default="-1.5707"/>
+
+  <!-- Put the Initial Pose Settings on the Parameter Server -->
+  <rosparam param="/initialposeX" subst_value="True">$(arg initialposeX)</rosparam>
+  <rosparam param="/initialposeY" subst_value="True">$(arg initialposeY)</rosparam>
+  <rosparam param="/initialposeZ" subst_value="True">$(arg initialposeZ)</rosparam>
+  <rosparam param="/initialposeYaw" subst_value="True">$(arg initialposeYaw)</rosparam>
+  <rosparam param="/default_workspace_bounds">[-50, -50, 0, 50, 50, 50]</rosparam>
+
+  <!-- Drywall Destination Settings -->
+  <rosparam file="$(find move_pick_place)/config/pickplace_param.yaml" />
+
+  <!-- Set custom world file name. -->
+  <arg name="world_file"    default="$(find move_pick_place)/worlds/drywall_stack.world"/>
+
+  <!-- Set map file name. -->
+  <arg name="map_file"      default="$(find move_pick_place)/maps/drywall_stack.yaml"/>
+
+  <!-- Set custom scan topic -->
+  <arg name="scan_topic"    value="/scan"/>
+
+  <!-- Gazebo Launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+    <arg name="paused" value="true"/>
+  </include>
+
+  <!-- Spawn Husky -->
+  <include file="$(find husky_pickplace)/launch/spawn_husky.launch">
+    <arg name="x" value="$(arg initialposeX)"/>
+    <arg name="y" default="$(arg initialposeY)"/>
+    <arg name="z" default="$(arg initialposeZ)"/>
+    <arg name="yaw" default="$(arg initialposeYaw)"/>
+  </include>
+
+  <!-- Universal Robotics Support -->
+  <include file="$(find husky_pickplace)/launch/ur_gazebo_helper.launch"/>
+  <include file="$(find husky_pickplace)/launch/ur_moveit_helper.launch"/>
+  
+  <!-- AMCL Launch -->
+  <include file="$(find husky_navigation)/launch/amcl_demo.launch" >
+      <arg name="map_file" value="$(arg map_file)"/>
+      <arg name="scan_topic" value="$(arg scan_topic)"/>
+  </include>
+
+  <!-- Override the navigation stack params MUST COME AFTER 'AMCL Launch' -->
+  <rosparam param="/move_base/local_costmap/inflation/inflation_radius">.01</rosparam>
+  <rosparam param="/move_base/DWAPlannerROS/xy_goal_tolerance">.3</rosparam>
+
+  <!-- rviz -->
+  <arg name ="rviz" default="true" />
+  <arg name ="rviz_file" default="$(find husky_pickplace)/rviz/view_husky.rviz"/>
+  <node pkg ="rviz" type="rviz" name="rviz" output="screen" args= "-d $(arg rviz_file)" if="$(arg rviz)"/>
+
+</launch>

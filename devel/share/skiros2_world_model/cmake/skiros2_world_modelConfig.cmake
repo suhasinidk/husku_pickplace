@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_world_model/share/skiros2_world_model/cmake/skiros2_world_modelConfig.cmake

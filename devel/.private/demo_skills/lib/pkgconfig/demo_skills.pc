@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/devel/.private/demo_skills
+
+Name: demo_skills
+Description: Description of demo_skills
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy skiros2_msgs

@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/install
+
+Name: skiros2_msgs
+Description: Description of skiros2_msgs
+Version: 1.0.3
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime genmsg actionlib std_msgs actionlib_msgs trajectory_msgs sensor_msgs control_msgs

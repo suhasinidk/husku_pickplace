@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/install
+
+Name: move_pick_place
+Description: Description of move_pick_place
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

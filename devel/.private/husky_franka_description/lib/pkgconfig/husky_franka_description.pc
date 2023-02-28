@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/devel/.private/husky_franka_description
+
+Name: husky_franka_description
+Description: Description of husky_franka_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,29 @@
+controller_list:
+  # - name: fake_gripper_controller
+    # type: $(arg fake_execution_type)
+    # joints:
+      # - gripper_finger1_joint
+  - name: fake_ur_and_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - ur_arm_shoulder_pan_joint
+      - ur_arm_shoulder_lift_joint
+      - ur_arm_elbow_joint
+      - ur_arm_wrist_1_joint
+      - ur_arm_wrist_2_joint
+      - ur_arm_wrist_3_joint
+      # - gripper_finger1_joint
+  - name: fake_ur5_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - ur_arm_shoulder_pan_joint
+      - ur_arm_shoulder_lift_joint
+      - ur_arm_elbow_joint
+      - ur_arm_wrist_1_joint
+      - ur_arm_wrist_2_joint
+      - ur_arm_wrist_3_joint
+initial:  # Define initial robot poses.
+  # - group: gripper
+  #   pose: close
+  - group: ur_and_gripper
+    pose: home

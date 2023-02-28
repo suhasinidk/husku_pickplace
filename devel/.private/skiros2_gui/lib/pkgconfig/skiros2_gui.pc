@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_gui
+
+Name: skiros2_gui
+Description: Description of skiros2_gui
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy skiros2_msgs

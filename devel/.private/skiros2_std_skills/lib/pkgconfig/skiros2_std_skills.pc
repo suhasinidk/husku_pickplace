@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_std_skills
+
+Name: skiros2_std_skills
+Description: Description of skiros2_std_skills
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

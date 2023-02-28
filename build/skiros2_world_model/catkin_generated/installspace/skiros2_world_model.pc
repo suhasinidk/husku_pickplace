@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/install
+
+Name: skiros2_world_model
+Description: Description of skiros2_world_model
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy skiros2_msgs

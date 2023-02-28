@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/install
+
+Name: skiros2
+Description: Description of skiros2
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

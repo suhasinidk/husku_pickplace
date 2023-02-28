@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_test_lib
+
+Name: skiros2_test_lib
+Description: Description of skiros2_test_lib
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy skiros2_msgs

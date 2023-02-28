@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_common/lib/pkgconfig/skiros2_common.pc

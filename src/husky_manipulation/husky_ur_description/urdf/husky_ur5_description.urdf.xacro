@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+  <!-- <xacro:include filename="$(find robotiq_85_description)/urdf/robotiq_85_gripper.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(find robotiq_85_description)/urdf/e_robotiq_85_gripper.urdf.xacro" /> -->
+
+  <joint name="arm_mount_joint" type="fixed">
+    <parent link="top_plate_front_link" />
+    <child link="ur_arm_base_link" />
+    <origin xyz="$(optenv HUSKY_UR_XYZ -0.105 0.0 0.2)" rpy="$(optenv HUSKY_UR_RPY 0 0 3.1415927)"/>
+  </joint>
+
+  <xacro:ur5_robot prefix="ur_arm_" joint_limited="false"/>
+
+   <!-- <xacro:robotiq_85_gripper prefix="" parent="ur_arm_wrist_3_link" >
+      <origin xyz="0 0.1 0" rpy="0 0 ${pi/2}"/> 
+    </xacro:robotiq_85_gripper> -->
+
+</robot>

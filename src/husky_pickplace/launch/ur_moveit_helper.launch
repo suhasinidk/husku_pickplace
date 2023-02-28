@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--  The components of this file were lifted from the 3 launches to run the ur5 code in rviz and gazebo:
+  * roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true
+-->
+<launch>
+  <arg name="sim" default="true" />
+  <arg name="limited" default="false"/>
+  <arg name="debug" default="false" />
+    
+  <!-- Remap follow_joint_trajectory -->
+  <!-- <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_position_controller/follow_joint_trajectory"/> -->
+  
+  <!-- Launch moveit -->
+  <!-- <include file="$(find huskyur5_moveit_config)/launch/move_group.launch"> -->
+  <include file="$(find huskyur5gripper_moveit_config)/launch/move_group.launch"> 
+    <!-- <arg name="limited" default="$(arg limited)"/> -->
+    <arg name="debug" default="$(arg debug)" />
+    <arg name="load_robot_description" value="false" />
+
+    <!-- <arg name="fake_execution" default="true"/>
+    <arg name="fake_execution_type" default="interpolate" /> -->
+  </include>
+</launch>

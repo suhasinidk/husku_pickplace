@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_msgs/share/skiros2_msgs/cmake/skiros2_msgsConfig-version.cmake

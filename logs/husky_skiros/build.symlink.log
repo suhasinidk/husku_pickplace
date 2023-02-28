@@ -1,0 +1,5 @@
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/pkgconfig/husky_skiros.pc
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/python2.7/dist-packages/nav/__init__.py
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/python2.7/dist-packages/picknplace/__init__.py
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/husky_skiros/cmake/husky_skirosConfig-version.cmake
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/husky_skiros/cmake/husky_skirosConfig.cmake

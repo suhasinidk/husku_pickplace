@@ -1,0 +1,24 @@
+# MOVEIT CONTROLLER SETTINGS
+controller_list:
+  - name: "arm_position_controller"
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - ur_arm_shoulder_pan_joint
+      - ur_arm_shoulder_lift_joint
+      - ur_arm_elbow_joint
+      - ur_arm_wrist_1_joint
+      - ur_arm_wrist_2_joint
+      - ur_arm_wrist_3_joint
+  # - name: "gripper_controller"
+  #   action_ns: follow_joint_trajectory
+  #   type: FollowJointTrajectory
+  #   default: true
+  #   joints:
+  #     - gripper_finger1_joint
+initial:  # Define initial robot poses.
+  # - group: gripper
+  #   pose: close
+  - group: ur_and_gripper
+    pose: home

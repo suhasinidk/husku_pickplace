@@ -1,0 +1,335 @@
+<?xml version='1.0'?>
+
+<robot name="two_bedroom" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="two_bedroom_footprint"/>
+
+  <joint name="two_bedroom_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="two_bedroom_footprint"/>
+    <child link="element_0"/>
+  </joint>
+ 
+  <link name="element_0"> 
+    <inertial> 
+      <mass value="1e-6"/>
+			<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>  
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355912.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_0_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355912.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ 	<joint type="fixed" name="element_0_joint"> 
+	  <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+	  <child link="element_0"/> 
+	  <parent link="two_bedroom_footprint"/> 
+	  <axis xyz="0 1 0" rpy="0 0 0"/> 
+	  <limit effort="10000" velocity="1000"/> 
+	  <dynamics damping="1.0" friction="1.0"/> 
+  </joint> 
+
+	<link name="element_1"> 
+    <inertial> 
+      <mass value="1e-6"/>
+			<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial> 
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356118.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_1_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356118.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ 	<joint type="fixed" name="element_1_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_1"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint>
+
+  <link name="element_2"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial> 
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355388.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_2_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355388.dae"/> 
+      </geometry> 
+    </visual>
+  </link>
+ 
+ 	<joint type="fixed" name="element_2_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_2"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint>
+
+  <link name="element_3"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/359840.dae"/> 
+      </geometry> 
+    </collision>
+    <visual name='element_3_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/359840.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ 	<joint type="fixed" name="element_3_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_3"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint> 
+	  
+  <link name="element_4"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355759.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_4_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355759.dae"/> 
+      </geometry> 
+    </visual> 
+  </link>
+	 
+	<joint type="fixed" name="element_4_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_4"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint>
+
+  <link name="element_5"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial> 
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/409856.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_5_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/409856.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ <joint type="fixed" name="element_5_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_5"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint> 
+
+  <link name="element_6"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355598.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_6_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/355598.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+	<joint type="fixed" name="element_6_joint"> 
+		<origin xyz="0 0 0.0" rpy="0 0 0"/> 
+		<child link="element_6"/> 
+		<parent link="two_bedroom_footprint"/> 
+		<axis xyz="0 1 0" rpy="0 0 0"/> 
+		<limit effort="10000" velocity="1000"/> 
+		<dynamics damping="1.0" friction="1.0"/> 
+	</joint>
+
+  <link name="element_7"> 
+    <inertial> 
+      <mass value="1e-6"/>
+			<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial> 
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356215.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_7_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356215.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ 	<joint type="fixed" name="element_7_joint"> 
+	  <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+	  <child link="element_7"/> 
+	  <parent link="two_bedroom_footprint"/> 
+	  <axis xyz="0 1 0" rpy="0 0 0"/> 
+	  <limit effort="10000" velocity="1000"/> 
+	  <dynamics damping="1.0" friction="1.0"/> 
+	</joint>
+
+  <link name="element_8"> 
+    <inertial> 
+      <mass value="1e-6"/>
+			<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356043.dae"/> 
+      </geometry> 
+    </collision>
+    <visual name='element_8_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356043.dae"/> 
+      </geometry> 
+    </visual> 
+  </link>
+	 
+	<joint type="fixed" name="element_8_joint"> 
+		<origin xyz="0 0 0.0" rpy="0 0 0"/> 
+		<child link="element_8"/> 
+		<parent link="two_bedroom_footprint"/> 
+		<axis xyz="0 1 0" rpy="0 0 0"/> 
+		<limit effort="10000" velocity="1000"/> 
+		<dynamics damping="1.0" friction="1.0"/> 
+	</joint>
+
+  <link name="element_9"> 
+    <inertial> 
+      <mass value="1e-6"/>
+     	<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+     	<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial> 
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/residential_building.dae"/> 
+      </geometry> 
+    </collision> 
+    <visual name='element_9_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/residential_building.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+	<joint type="fixed" name="element_9_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_9"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint> 
+
+  <link name="element_10"> 
+    <inertial> 
+      <mass value="1e-6"/>
+			<origin xyz="0.0 0 0" rpy="0 0 0"/> 
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>  
+    </inertial>
+    <collision name='collision'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356332.dae"/> 
+      </geometry> 
+    </collision>
+    <visual name='element_10_visual'> 
+      <origin xyz="0 0 0" rpy="0 0 0"/>  
+      <geometry> 
+        <mesh filename = "package://move_pick_place/urdf/two_bedroom/meshes/356332.dae"/> 
+      </geometry> 
+    </visual> 
+  </link> 
+	 
+ 	<joint type="fixed" name="element_10_joint"> 
+    <origin xyz="0 0 0.0" rpy="0 0 0"/> 
+    <child link="element_10"/> 
+    <parent link="two_bedroom_footprint"/> 
+    <axis xyz="0 1 0" rpy="0 0 0"/> 
+    <limit effort="10000" velocity="1000"/> 
+    <dynamics damping="1.0" friction="1.0"/> 
+  </joint>
+
+  <!-- Set Model to Static -->
+	<gazebo>
+    <static>true</static>
+	</gazebo>
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/krishna/Downloads/final_pkg_ws/install
+
+Name: husky_kinova_bringup
+Description: Description of husky_kinova_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

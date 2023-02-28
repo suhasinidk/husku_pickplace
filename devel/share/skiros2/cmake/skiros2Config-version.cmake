@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2/share/skiros2/cmake/skiros2Config-version.cmake

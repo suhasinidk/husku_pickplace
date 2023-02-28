@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/husky_skiros/lib/python2.7/dist-packages/picknplace/__init__.py

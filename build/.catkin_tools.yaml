@@ -1,0 +1,6 @@
+devel_space: /home/krishna/Downloads/final_pkg_ws/devel
+install: false
+install_space: /home/krishna/Downloads/final_pkg_ws/install
+profile: default
+source_space: /home/krishna/Downloads/final_pkg_ws/src
+workspace: /home/krishna/Downloads/final_pkg_ws

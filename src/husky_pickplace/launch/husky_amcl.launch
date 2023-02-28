@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Gazebo Args -->
+  <arg name="use_sim_time"  default="true"/>
+  <arg name="debug"         default="false"/>
+  <arg name="gui"           default="true"/>
+
+  <!-- Set custom world file name. -->
+  <arg name="world_file"    default="$(find husky_pickplace)/worlds/lab_packaging.world"/>
+
+  <!-- Set map file name. -->
+  <arg name="map_file"      default="$(find husky_pickplace)/maps/task2_world.yaml"/>
+
+  <!-- Set custom scan topic -->
+  <arg name="scan_topic" value="/scan"/>
+
+  <!-- Gazebo Launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+    <arg name="paused" value="true"/>
+  </include>
+
+  <!-- Spawn Husky -->
+  <include file="$(find husky_pickplace)/launch/spawn_husky.launch">
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.22"/>
+    <arg name="yaw" default="0.0"/>
+  </include>
+
+  <!-- Universal Robotics Support -->
+  <include file="$(find husky_pickplace)/launch/ur_gazebo_helper.launch"/>
+  <include file="$(find husky_pickplace)/launch/ur_moveit_helper.launch"/>
+  
+  <!-- AMCL Launch -->
+  <include file="$(find husky_navigation)/launch/amcl_demo.launch" >
+      <arg name="map_file" value="$(arg map_file)"/>
+      <arg name="scan_topic" value="$(arg scan_topic)"/>
+  </include>
+
+  <node pkg="husky_skiros" name="obj_spawner" type="spawn_box.py" output="screen"/> 
+  <!-- rviz -->
+  <!-- <arg name ="rviz" default="true" />
+  <arg name ="rviz_file" default="$(find husky_pickplace)/rviz/view_husky.rviz"/>
+  <node pkg ="rviz" type="rviz" name="rviz" output="screen" args= "-d $(arg rviz_file)" if="$(arg rviz)"/> -->
+  
+  <include file="$(find husky_skiros)/launch/husky_skiros.launch" >
+  </include>
+
+</launch>

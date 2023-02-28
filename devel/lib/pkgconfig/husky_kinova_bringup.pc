@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/husky_kinova_bringup/lib/pkgconfig/husky_kinova_bringup.pc

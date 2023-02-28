@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Gazebo Args -->
+  <arg name="use_sim_time"  default="true"/>
+  <arg name="debug"         default="false"/>
+  <arg name="gui"           default="true"/>
+
+    <!-- Initial Construction Model Pose -->
+  <arg name="twoBedPoseX"    default="-3.0"/>
+  <arg name="twoBedPoseY"    default="5.0"/>
+  <arg name="twoBedPoseZ"    default="0.05"/>
+  <arg name="twoBedPoseYaw"  default="0.0"/>
+
+  <rosparam param="/amcl/base_frame_id">"base_footprint"</rosparam>
+
+  <!-- Set custom world file name. -->
+  <arg name="world_file"    default="$(find move_pick_place)/worlds/construction_site_house_mapping.world"/>
+
+  <!-- Set custom scan topic -->
+  <arg name="scan_topic" value="/scan"/>
+
+  <!-- Gazebo Launch -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+
+  <!-- Spawn Husky -->
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="x" default="0.0"/>
+    <arg name="y" default="0.0"/>
+    <arg name="z" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+  </include>
+
+  <!-- Spawn Two Bedroom Construction -->
+<!--   <include file="$(find move_pick_place)/launch/spawn_two_bedroom.launch">
+    <arg name="x" value="$(arg twoBedPoseX)"/>
+    <arg name="y" default="$(arg twoBedPoseY)"/>
+    <arg name="z" default="$(arg twoBedPoseZ)"/>
+    <arg name="yaw" default="$(arg twoBedPoseYaw)"/>
+  </include> -->
+
+  <include file="$(find husky_cartographer_navigation)/launch/cartographer_demo.launch" />
+ 
+  <!-- rviz -->
+  <arg name ="rviz" default="true" />
+  <arg name ="rviz_file" default="$(find husky_pickplace)/rviz/view_carto.rviz"/>
+  <node pkg ="rviz" type="rviz" name="rviz" output="screen" args= "-d $(arg rviz_file)" if="$(arg rviz)"/>
+
+</launch>

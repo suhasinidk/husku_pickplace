@@ -1,0 +1,4 @@
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/pkgconfig/skiros2_template_lib.pc
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/python2.7/dist-packages/skiros2_template_lib/__init__.py
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/skiros2_template_lib/cmake/skiros2_template_libConfig.cmake
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/skiros2_template_lib/cmake/skiros2_template_libConfig-version.cmake

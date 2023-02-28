@@ -1,0 +1,4 @@
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/pkgconfig/skiros2_gui.pc
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/lib/python2.7/dist-packages/skiros2_gui/__init__.py
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/skiros2_gui/cmake/skiros2_guiConfig.cmake
+Symlinking /home/krishna/Downloads/final_pkg_ws/devel/share/skiros2_gui/cmake/skiros2_guiConfig-version.cmake

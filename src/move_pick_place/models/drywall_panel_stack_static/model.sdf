@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="drywall_panel_stack_static">
+    <static>true</static>
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.2192 1.2192 0.2286</size> <!-- Drywall is typically stacked no higher than 9" ~ .2286m -->
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>1.2192 1.2192 0.2286</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Gray-Green = RGB (94, 113, 106) -->
+          <ambient>0.3671875 0.44140625 0.4140625 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0.1 0.1 0.1 1</emissive>
+        </material>
+        <self_collide>0</self_collide>
+      </visual>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+        <mass>1</mass>
+      </inertial>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

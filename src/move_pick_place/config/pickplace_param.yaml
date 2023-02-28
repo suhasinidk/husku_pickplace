@@ -1,0 +1,3 @@
+destination_list:   # Destinations are defined by coordinates x, y, z, and yaw.
+  [1.00, 2.00, 0.5, 3.14,     # Position of object 1
+   2.00, 2.00, 0.5, 1.5707]   # Position of object 2

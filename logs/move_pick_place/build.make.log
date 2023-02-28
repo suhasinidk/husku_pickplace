@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target move_pick_place_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/move_pick_place_node.dir/src/move_pick_place_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/krishna/Downloads/final_pkg_ws/devel/.private/move_pick_place/lib/move_pick_place/move_pick_place_node[0m
+[100%] Built target move_pick_place_node

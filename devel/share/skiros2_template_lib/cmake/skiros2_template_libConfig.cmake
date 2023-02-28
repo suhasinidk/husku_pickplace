@@ -1,0 +1,1 @@
+/home/krishna/Downloads/final_pkg_ws/devel/.private/skiros2_template_lib/share/skiros2_template_lib/cmake/skiros2_template_libConfig.cmake
