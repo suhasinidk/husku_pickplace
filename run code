@@ -1,3 +1,4 @@
+copy src files to workspace
 rosdep install --from-paths . --ignore-src  -y
 catkin build
 source ./devel/setup.bash
